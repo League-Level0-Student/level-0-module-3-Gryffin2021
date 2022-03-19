@@ -2,6 +2,9 @@
 package _01_else_if._1_robot_color_chooser;
 
 import javax.swing.JOptionPane;
+
+import org.jointheleague.graphical.robot.Robot;
+
 import java.awt.Color;
 
 public class RobotColorChooser {
@@ -14,6 +17,32 @@ public class RobotColorChooser {
 		//5. Use an if/else statement to set the pen color that the user requested
         //6. If the user doesn't enter anything, choose a random color
         //7. Put a loop around your code so that you keep asking the user for more colors & drawing them
+		Robot geoff = new Robot();
+		geoff.setSpeed(25);
+		
+		
+		for(int i=0; i<10; i++) {
+		String color = JOptionPane.showInputDialog(null,"What color would you like? (red, green, blue, or random)");
+		
+			if(color.equals("red")) {
+				geoff.setPenColor(255,0,0);	
+			}else if(color.equals("green")) {
+				geoff.setPenColor(0,255,0);	
+		}else if(color.equals("blue")) {
+			geoff.setPenColor(0,0,255);	
+		}else {
+			geoff.setRandomPenColor();
+		}
+		geoff.setPenWidth(10);
+		geoff.penDown();
+		geoff.move(150);
+		geoff.turn(-90);
+		geoff.move(150);
+		geoff.turn(-90);
+		geoff.move(150);
+		geoff.turn(-90);
+		geoff.move(150);
+		}
 		
 
 		
